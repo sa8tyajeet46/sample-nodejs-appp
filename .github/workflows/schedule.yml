@@ -1,6 +1,6 @@
 on:
     schedule:
-    - corn :'*/5 * * * *'
+    - cron :'*/5 * * * *'
 
 jobs:
      schedulprint:
