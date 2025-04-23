@@ -1,0 +1,10 @@
+on:
+    schedule:
+    - corn :'*/5 * * * *'
+
+jobs:
+     schedulprint:
+     runs-on:ubuntu-latest
+     steps:
+     - name :Echo
+       run: echo "hello world"
