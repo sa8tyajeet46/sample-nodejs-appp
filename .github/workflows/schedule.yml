@@ -1,4 +1,4 @@
-name: Scheduled Print
+name: schedule
 on:
   schedule:
     - cron: '*/5 * * * *'
