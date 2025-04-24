@@ -15,8 +15,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/ec2-user/sample-app
-              git pull
-            fi
+            git pull
             npm install --verbose
             pm2 restart all
             sudo systemctl restart nginx
