@@ -1,0 +1,22 @@
+
+on:
+  push:
+    branches:
+      - master  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to AWS Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/ec2-user/sample-app
+              git pull
+            fi
+            npm install --verbose
+            pm2 restart all
+            sudo systemctl restart nginx
